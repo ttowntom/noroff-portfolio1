@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Rainy Days",
+		"description": "A e-commerce website for a fictional company, selling rain jackets.",
+		"image": "https://i.postimg.cc/1zt8S31b/Home-Rainy-Days.png",
+		"githubRepo": "https://github.com/ttowntom/noroff-fed-cms",
+		"liveSite": "https://rainydayscms-thr.netlify.app/"
+	},
+	{
+		"name": "Community Science Museum",
+		"description": "A HTML & CSS website for a fictional museum for kids.",
+		"image": "https://i.postimg.cc/wBJS7hzN/Home-Community-Science-Museum.png)",
+		"githubRepo": "https://github.com/ttowntom/noroff-fed-sp1",
+		"liveSite": "https://csm-thr.netlify.app/"
+	},
+	{
+		"name": "CodeJourney",
+		"description": "A blog for a fictional character writing about tech and code.",
+		"image": "https://i.postimg.cc/J40Jmx3p/Home-Code-Journey-io.png)",
+		"githubRepo": "https://github.com/Noroff-FEU-Assignments/project-exam-1-ttowntom",
+		"liveSite": "https://pe1-thr.netlify.app/"
+	}
+]
