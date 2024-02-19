@@ -1,0 +1,168 @@
+/********************************************************************************************
+Root variables
+********************************************************************************************/
+:root {
+	--clr-white-actual: hsl(0, 0%, 100%);
+	--clr-white: hsl(226, 21%, 88%);
+	--clr-black: hsl(203, 62%, 4%);
+
+	--clr-accent: hsl(213, 100%, 47%);
+	--clr-bg-blue: hsl(213, 31%, 7%);
+	--clr-bg-blue-dark: hsl(213, 100%, 2%);
+
+	--ff-def: system-ui;
+
+	--fw-400: 400;
+	--fw-700: 700;
+
+	--body-max-width: 1170px;
+}
+
+/********************************************************************************************
+CSS resets
+********************************************************************************************/
+/* Set border-box */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin and padding, set element font behavior */
+* {
+	margin: 0;
+	padding: 0;
+	min-width: 0; /* Prevent strange overflows :: Suggested by Josh Comeau https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/#the-minimum-size-gotcha-11 */
+	font: inherit;
+}
+
+/* Make headings wrap nicely */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/* Better readability for long paragraphs */
+p {
+	max-width: 75ch;
+	text-wrap: pretty; /* Prevent orphans */
+}
+
+html {
+	color-scheme: dark light; /* Set color theme */
+	hanging-punctuation: first last; /* Ensure prettier text lines */
+}
+
+/* Set global style and size */
+body {
+	min-height: 100vh; /* Fallback for unsupported browsers */
+	min-height: 100svh;
+	font-family: var(--ff-def);
+	color: var(--clr-white);
+	accent-color: var(--clr-orange);
+}
+
+/* Un-fruck media behavior */
+img,
+picture,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+/* Remove list styles */
+nav ul li {
+	list-style: none;
+}
+
+/* Better scroll behavior while respecting preference */
+@media (prefers-reduced-motion: no-preference) {
+	:has(:target) /* Takes in-page box-scrolling into account */ {
+		scroll-behavior: smooth;
+		scroll-padding-top: 2rem; /* Give some head room */
+	}
+}
+
+/********************************************************************************************
+Sections
+********************************************************************************************/
+html {
+	background-color: var(--clr-black);
+}
+
+body {
+	max-width: var(--body-max-width);
+	margin-inline: auto;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+#portfolio-items {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(calc((var(--body-max-width) / 2) - 2rem), 1fr)
+	);
+}
+
+/********************************************************************************************
+Typography
+********************************************************************************************/
+h2 {
+	font-size: 2rem;
+	font-weight: var(--fw-700);
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	font-weight: var(--fw-700);
+	margin-bottom: 0.85rem;
+}
+
+/********************************************************************************************
+Elements
+********************************************************************************************/
+ul {
+	margin-block: 1rem;
+}
+
+/********************************************************************************************
+Components
+********************************************************************************************/
+/* Portfolio items */
+.portfolio-item {
+	display: grid;
+	grid-template-columns: 15rem auto;
+	gap: 1rem;
+	border: 1px solid var(--clr-white);
+	border-radius: 3px;
+
+	&:is(:hover, :focus, :active) {
+		border-color: var(--clr-accent);
+	}
+
+	& img {
+		object-fit: cover;
+		object-position: top;
+		height: 15rem;
+		width: 100%;
+		border-top-right-radius: 0.85rem;
+		border-bottom-right-radius: 0.85rem;
+		border-right: 3px solid var(--clr-accent);
+
+		&:is(:hover, :focus, :active) {
+			border-color: var(--clr-white);
+		}
+	}
+
+	& div {
+		padding: 1rem;
+	}
+}
