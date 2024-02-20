@@ -3,14 +3,15 @@ const data = [
 	{
 		name: "Rainy Days",
 		description:
-			"A e-commerce website for a fictional company, selling rain jackets.",
+			"A e-commerce website for a fictional company, selling rain jackets. Built with JavaScript and using WordPress with WooCommerce as a headless CMS.",
 		image: "https://i.postimg.cc/1zt8S31b/Home-Rainy-Days.png",
 		githubRepo: "https://github.com/ttowntom/noroff-fed-cms",
 		liveSite: "https://rainydayscms-thr.netlify.app/",
 	},
 	{
 		name: "Community Science Museum",
-		description: "A HTML & CSS website for a fictional museum for kids.",
+		description:
+			"A HTML & CSS website for a fictional museum for kids. Its core target audience is primary and middle school children (ages 7-15) and families with young children.",
 		image: "https://i.postimg.cc/wBJS7hzN/Home-Community-Science-Museum.png)",
 		githubRepo: "https://github.com/ttowntom/noroff-fed-sp1",
 		liveSite: "https://csm-thr.netlify.app/",
@@ -18,7 +19,7 @@ const data = [
 	{
 		name: "CodeJourney",
 		description:
-			"A blog for a fictional character writing about tech and code.",
+			"A blog for a fictional character writing about tech and code. The project was allocated five weeks from beginning to end and involved coding the site from scratch as well as setting up WordPress as a headless CMS and populating it with the posts for the blog. ",
 		image: "https://i.postimg.cc/J40Jmx3p/Home-Code-Journey-io.png)",
 		githubRepo:
 			"https://github.com/Noroff-FEU-Assignments/project-exam-1-ttowntom",
@@ -38,6 +39,7 @@ data.forEach((item) => {
 	// Create the image element
 	const imageLink = document.createElement("a");
 	imageLink.href = item.liveSite;
+	imageLink.target = "_blank";
 	const image = document.createElement("img");
 	image.src = item.image;
 	image.alt = "A screenshot of the" + item.name + "website";
@@ -61,6 +63,7 @@ data.forEach((item) => {
 	const listGh = document.createElement("li");
 	const linkGh = document.createElement("a");
 	linkGh.href = item.githubRepo;
+	linkGh.target = "_blank";
 	linkGh.textContent = "View GitHub repo";
 	listGh.appendChild(linkGh);
 
@@ -68,6 +71,7 @@ data.forEach((item) => {
 	const listLs = document.createElement("li");
 	const linkLs = document.createElement("a");
 	linkLs.href = item.liveSite;
+	linkLs.target = "_blank";
 	linkLs.textContent = "View Live Site";
 	listLs.appendChild(linkLs);
 
