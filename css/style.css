@@ -179,8 +179,8 @@ Components
 ********************************************************************************************/
 /* Portfolio items */
 .portfolio-item {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
 	border: 1px solid var(--clr-accent-trans);
 	border-radius: 1rem;
@@ -191,14 +191,10 @@ Components
 		box-shadow: 0.05rem 0.15rem 1rem 0.15rem var(--clr-accent-trans);
 	}
 
-	& > * {
-		flex: 1;
-	}
-
 	& img {
 		object-fit: cover;
 		object-position: top;
-		max-height: 22rem;
+		height: 27rem;
 		width: 100%;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
@@ -224,6 +220,7 @@ Mobile media queries
 	}
 
 	.portfolio-item {
+		display: flex;
 		flex-direction: column;
 		flex-direction: column-reverse;
 
